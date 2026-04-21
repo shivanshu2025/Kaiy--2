@@ -1,7 +1,7 @@
 'use client';
 
 export default function Marquee() {
- const text = ' - DESIGN • INNOVATE • DOMINATE • - CRAFTING DIGITAL EXPERIENCES - WEBSITES THAT SELL - MODERN WEBSITES FOR MODERN BRANDS • -';
+ const text = '- DESIGN • INNOVATE • DOMINATE • - CRAFTING DIGITAL EXPERIENCES - WEBSITES THAT SELL - MODERN WEBSITES FOR MODERN BRANDS • -';
 
   return (
     <section className="bg-stone-900 text-white py-6 overflow-hidden">

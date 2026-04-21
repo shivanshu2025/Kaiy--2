@@ -29,7 +29,7 @@ export default function FashionHero() {
         
         {/* Left Column: Mission Statement */}
         <div className="w-full md:w-1/3 space-y-12 mt-24 md:mt-0 z-20">
-          <div className="bg-black text-white p-6 max-w-[320px] transform -rotate-1 shadow-2xl border-r-4 border-[#A84A32]">
+          <div className="bg-black text-white p-3 max-w-[320px] transform -rotate-1 shadow-2xl border-r-4 border-[#A84A32]">
             <h2 className="text-xl font-bold mb-2 tracking-tight">Venture Capital Reimagined.</h2>
             <p className="text-sm leading-relaxed uppercase font-medium tracking-tight opacity-80">
               Building a startup is chaotic. Kaiyō provides the structure, style, and scale to turn vision into market dominance.
