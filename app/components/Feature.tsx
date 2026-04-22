@@ -119,8 +119,6 @@ export default function OurStorySection() {
                 </textPath>
               </text>
             </svg>
-
-          
           
           </div>
         </motion.div>
