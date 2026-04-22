@@ -1,72 +1,102 @@
 'use client';
 
-import { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-const products = [
-  { id: 1, name: 'Basic Black', price: '$120', image: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 2, name: 'Gem Happy Clouds', price: '$250', image: 'https://images.pexels.com/photos/3787517/pexels-photo-3787517.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 3, name: 'Viz Reverie Glamor', price: '$180', image: 'https://images.pexels.com/photos/3622622/pexels-photo-3622622.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 4, name: 'Statement Vibe', price: '$220', image: 'https://images.pexels.com/photos/2130268/pexels-photo-2130268.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 5, name: 'Cosmic Cobalt', price: '$200', image: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 6, name: 'Iconic Casualty', price: '$160', image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 7, name: 'Premium Select', price: '$190', image: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 8, name: 'Luxury Essence', price: '$280', image: 'https://images.pexels.com/photos/2962173/pexels-photo-2962173.jpeg?auto=compress&cs=tinysrgb&w=600' },
+const projects = [
+  { id: 1, name: 'Lal Sweets Ecom Website', desc: 'Modern sweets store with responsive design for smooth shopping.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 2, name: 'Kirtilals : Luxury Website', desc: 'Premium diamond-jewellery store with elegant UX for luxury buyers.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 3, name: 'Tradescribe: Trading Platform', desc: 'Built a sleek journaling platform for tracking trades with Al-backed analytics.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/3183187/pexels-photo-3183187.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 4, name: 'Murzban Website', desc: 'Elegant and clean website showcasing interior design and architecture portfolio.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/3183187/pexels-photo-3183187.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 5, name: 'Greenfeels: Sustainable Ecom', desc: 'Eco-conscious e-commerce platform promoting sustainable products.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/3183187/pexels-photo-3183187.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 6, name: 'Momentz Ecom Website', desc: 'A sophisticated online store for premium watches and luxury accessories.', logo: 'https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=200', screenshot: 'https://images.pexels.com/photos/3183187/pexels-photo-3183187.jpeg?auto=compress&cs=tinysrgb&w=600' },
 ];
 
-export default function ProductGrid() {
-  const [activeTab, setActiveTab] = useState('new');
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, // Staggers the arrival of children by 0.1 seconds
+    },
+  },
+};
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const PortfolioCard = ({ name, desc, logo, screenshot }) => (
+  <motion.div 
+    variants={itemVariants} 
+    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+    className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-shadow hover:shadow-lg group flex flex-col"
+  >
+    <div className="relative aspect-[16/10] bg-gray-50 rounded-2xl overflow-hidden mb-6">
+      {/* Screenshot Image with Hover Zoom */}
+      <Image 
+        src={screenshot} 
+        alt={`${name} screenshot`}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+      />
+      
+      {/* Centered Logo Badge */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-lg shadow-md border border-gray-100">
+        <Image 
+          src={logo} 
+          alt={`${name} logo`}
+          width={80} 
+          height={20} 
+          className="object-contain"
+        />
+      </div>
+    </div>
+    
+    <div className="flex-grow space-y-2">
+      <h3 className="text-xl font-semibold text-gray-900 leading-tight transition-colors group-hover:text-sky-600">{name}</h3>
+      <p className="text-sm text-gray-600 leading-relaxed font-normal">{desc}</p>
+    </div>
+  </motion.div>
+);
+
+export default function PortfolioSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-green-900 rounded-3xl mx-4 sm:mx-6 lg:mx-8 my-20">
+    <section className="bg-white text-gray-900 py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-5xl font-bold text-white mb-2">OUR COLLECTION</h2>
-          <p className="text-green-100 text-lg">FOR YOU</p>
-        </div>
+        
+        {/* Header Section */}
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="text-center mb-16 md:mb-20 space-y-4"
+        >
+          <div className="flex justify-center">
+            <span className="bg-gray-100/70 border border-gray-200 backdrop-blur-sm text-sm px-6 py-2.5 rounded-full font-medium text-gray-800 tracking-wide">
+              Social Presence
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D1B2A] leading-tight tracking-tight max-w-4xl mx-auto">
+            Turning Visions Into <br className="hidden sm:inline" /> Digital Reality
+          </h2>
+        </motion.div>
 
-        {/* Tabs */}
-        <div className="flex gap-4 mb-12">
-          {['New Arrival', 'Best Sellers', 'Sale'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab.toLowerCase())}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition ${
-                activeTab === tab.toLowerCase()
-                  ? 'bg-orange-500 text-white'
-                  : 'bg-green-800 text-green-100 hover:bg-green-700'
-              }`}
-            >
-              {tab}
-            </button>
+        {/* Portfolio Grid */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+        >
+          {projects.map((project) => (
+            <PortfolioCard key={project.id} {...project} />
           ))}
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-          {products.map((product) => (
-            <div key={product.id} className="group">
-              <div className="relative h-56 bg-stone-300 rounded-2xl overflow-hidden mb-4 shadow-lg hover:shadow-xl transition">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <h3 className="text-white font-semibold mb-1">{product.name}</h3>
-              <p className="text-green-200 text-sm">{product.price}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* View All Button */}
-        <div className="flex justify-center">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition">
-            View All Products
-          </button>
-        </div>
+        </motion.div>
+        
       </div>
     </section>
   );
