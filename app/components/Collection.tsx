@@ -5,7 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const projects = [
+type Project = {
+  id: number;
+  name: string;
+  desc: string;
+  screenshot: string;
+  link: string;
+};
+
+const projects: Project[] = [
   { 
     id: 1, 
     name: 'Lal Sweets Ecom Website', 
@@ -63,14 +71,16 @@ const itemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const PortfolioCard = ({ name, desc, screenshot, link }) => (
+type PortfolioCardProps = Omit<Project, 'id'>;
+
+const PortfolioCard = ({ name, desc, screenshot, link }: PortfolioCardProps) => (
   <Link href={link} target="_blank" className="block">
     <motion.div 
       variants={itemVariants} 
       whileHover={{ y: -4 }}
       className="text-gray-600 p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg group flex flex-col cursor-pointer"
     >
-      <div className="relative aspect-[16/10] bg-gray-50 rounded-2xl overflow-hidden mb-6">
+      <div className="relative aspect-[16/10] bg-[#E9E9E7] rounded-2xl overflow-hidden mb-6">
         <Image 
           src={screenshot} 
           alt={name}
@@ -93,7 +103,7 @@ const PortfolioCard = ({ name, desc, screenshot, link }) => (
 
 export default function PortfolioSection() {
   return (
-    <section className="text-gray-600 text-[#1F2A1F] py-24 px-6 md:px-10">
+    <section className="text-[#2f4f3f] bg-[#E9E9E7] text-[#1F2A1F] py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         
         {/* 🔥 HEADER WITH RIGHT BUTTON */}
@@ -121,7 +131,7 @@ export default function PortfolioSection() {
             {/* 🔥 Right Side Button */}
             <div className="flex justify-center md:justify-end">
               <Link href="/portfolio">
-                <button className="px-6 py-2.5 rounded-full border border-gray-300 text-sm font-medium hover:bg-[#1F2A1F] hover:text-white transition-all duration-300">
+                <button className="px-6 py-2.5 rounded-full border border-gray-300 text-sm font-medium hover:bg-[#2f4f3f] hover:text-white transition-all duration-300">
                   View all
                 </button>
               </Link>

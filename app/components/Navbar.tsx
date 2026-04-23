@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-stone-100">
+    <header className="sticky top-0 z-50 bg-[#E9E9E7] backdrop-blur-xl border-b border-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16"> {/* Reduced from h-20 to h-16 for a smaller nav feel */}
           

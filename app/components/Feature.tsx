@@ -9,7 +9,7 @@ export default function OurStorySection() {
   const backgroundX = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
-    <section className="relative w-full min-h-screen bg-[#DCDCDC] flex flex-col items-center justify-start overflow-hidden px-4 md:px-6 py-12 md:py-20 font-serif text-[#2D3627]">
+    <section className="relative w-full min-h-screen bg-[#E9E9E7] flex flex-col items-center justify-start overflow-hidden px-4 md:px-6 py-12 md:py-20 font-serif text-[#2D3627]">
       
       {/* 1. BACKGROUND ACCENTS - Animated Parallax */}
       <motion.div 

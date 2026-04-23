@@ -29,7 +29,7 @@ export default function FashionHero() {
         
         {/* Left Column: Mission Statement */}
         <div className="w-full md:w-1/3 space-y-12 mt-24 md:mt-0 z-20">
-          <div className="bg-black text-white p-3 max-w-[320px] transform -rotate-1 shadow-2xl border-r-4 border-[#A84A32]">
+          <div className="bg-black text-white p-3 max-w-[320px] transform -rotate-1 shadow-2xl border-r-4 border-[#2f4f3f]">
             <h2 className="text-xl font-bold mb-2 tracking-tight">Venture Capital Reimagined.</h2>
             <p className="text-sm leading-relaxed uppercase font-medium tracking-tight opacity-80">
               Building a startup is chaotic. Kaiyō provides the structure, style, and scale to turn vision into market dominance.
@@ -52,7 +52,7 @@ export default function FashionHero() {
         <div className="relative w-full md:w-1/2 flex justify-center pt-20 md:pt-40 z-10">
           <div className="relative group">
              {/* Glow effect behind PNG */}
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[80%] bg-[#632432] rounded-full mix-blend-multiply opacity-20 blur-[100px] -z-10"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[80%] bg-[#2f4f3f] rounded-full mix-blend-multiply opacity-20 blur-[100px] -z-10"></div>
             
             <img 
               src="/images/kaiyologo.png" 
@@ -87,11 +87,11 @@ export default function FashionHero() {
         {/* Right Column: Growth Stats */}
         <div className="w-full md:w-1/4 flex flex-col items-end text-right space-y-16 mt-16 md:mt-60 z-20">
           <div className="group cursor-default">
-            <h3 className="text-7xl font-bold tracking-tighter leading-none group-hover:text-[#A84A32] transition-colors">FAST</h3>
+            <h3 className="text-7xl font-bold tracking-tighter leading-none group-hover:text-[#2f4f3f] transition-colors">FAST</h3>
             <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-60 mt-2">Delivery</p>
           </div>
           <div className="group cursor-default">
-            <h3 className="text-7xl font-bold tracking-tighter leading-none group-hover:text-[#A84A32] transition-colors">MODERN</h3>
+            <h3 className="text-7xl font-bold tracking-tighter leading-none group-hover:text-[#2f4f3f] transition-colors">MODERN</h3>
             <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-60 mt-2">Design</p>
           </div>
         </div>

@@ -1,91 +1,96 @@
 'use client';
 
-import { useState } from 'react';
+import { FaLinkedinIn, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 3000);
-    }
-  };
-
   return (
-    <footer className="bg-stone-900 text-stone-200 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand */}
-          <div>
-            <h3 className="text-white font-bold text-lg mb-4">PASSION</h3>
-            <p className="text-sm text-stone-400">Live boldly, dress bravely.</p>
-          </div>
+    <footer className="bg-[#E9E9E7] text-[#2d2d2d] px-6 md:px-16 py-16">
+      
+      {/* TOP GRID */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
 
-          {/* Shop */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">SHOP</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition">New Arrivals</a></li>
-              <li><a href="#" className="hover:text-white transition">Best Sellers</a></li>
-              <li><a href="#" className="hover:text-white transition">Sale</a></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">COMPANY</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition">About</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Careers</a></li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">SUPPORT</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition">Returns</a></li>
-              <li><a href="#" className="hover:text-white transition">FAQ</a></li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">SUBSCRIBE</h4>
-            <form onSubmit={handleSubscribe} className="space-y-2">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 bg-stone-800 text-white rounded-lg text-sm placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <button
-                type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 rounded-lg text-sm font-semibold transition"
-              >
-                {subscribed ? '✓ Done' : 'Subscribe'}
-              </button>
-            </form>
-          </div>
+        {/* CATEGORIES */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4 text-sm tracking-wide">
+            Categories
+          </h3>
+          <ul className="space-y-3 text-sm text-gray-600">
+            <li>Shirt</li>
+            <li>Dress</li>
+            <li>Pants</li>
+            <li>Watches</li>
+            <li>Underwear</li>
+          </ul>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-stone-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-stone-400">
-          <p>&copy; 2024 PASSION. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Terms</a>
-            <a href="#" className="hover:text-white transition">Cookies</a>
+        {/* GENDER */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4 text-sm tracking-wide">
+            By Gender
+          </h3>
+          <ul className="space-y-3 text-sm text-gray-600">
+            <li>Male</li>
+            <li>Female</li>
+            <li>Unisex</li>
+          </ul>
+        </div>
+
+        {/* COMPANY */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4 text-sm tracking-wide">
+            Company
+          </h3>
+          <ul className="space-y-3 text-sm text-gray-600">
+            <li>About Us</li>
+            <li>Collections</li>
+            <li>Term of Us</li>
+            <li>Shipping Terms</li>
+          </ul>
+        </div>
+
+        {/* SUBSCRIBE */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4 text-sm tracking-wide">
+            Subscribe for News Letters
+          </h3>
+
+          <div className="flex items-center border border-gray-400 rounded-full overflow-hidden max-w-sm">
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="flex-1 px-4 py-3 bg-transparent outline-none text-sm"
+            />
+            <button className="bg-[#2f4f3f] text-white px-6 py-3 text-sm font-semibold rounded-full hover:bg-[#666660] transition">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
+
+      {/* DIVIDER */}
+      <div className="border-t border-gray-300 my-10"></div>
+
+      {/* BOTTOM */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        {/* LOGO */}
+        <h2 className="text-2xl font-extrabold text-[#2f4f3f]">
+          Kaiyō
+        </h2>
+
+        {/* SOCIALS */}
+        <div className="flex gap-4">
+          {[FaLinkedinIn, FaFacebookF, FaInstagram, FaTwitter].map((Icon, i) => (
+            <div
+              key={i}
+              className="w-10 h-10 flex items-center justify-center border border-gray-400 rounded-full hover:bg-[#2f4f3f] hover:text-white transition cursor-pointer"
+            >
+              <Icon size={14} />
+            </div>
+          ))}
+        </div>
+      </div>
+
     </footer>
   );
 }
