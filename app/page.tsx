@@ -1,13 +1,11 @@
-'use client';
-
-import Hero from '@/app/components/Hero';
-import Marquee from '@/app/components/Marquee';
-import Feature from '@/app/components/Feature';
-import Collection from '@/app/components/Collection';
-import Blog from '@/app/components/Blog';
-import Banner from '@/app/components/Banner';
-import Navbar from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
+import Hero from '@/components/sections/Hero';
+import Marquee from '@/components/sections/Marquee';
+import Feature from '@/components/sections/Feature';
+import Collection from '@/components/sections/Collection';
+import Blog from '@/components/sections/Blog';
+import Banner from '@/components/sections/Banner';
+import Navbar from '@/components/sections/Navbar';
+import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   return (
